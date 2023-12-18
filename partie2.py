@@ -66,7 +66,7 @@ if __name__=="__main__":
         # Message crypté
         print(cipher)
         # Durée d'exécution
-        print(f"Durée chiffrement AES: {duree:.5f} secondes")
+        print(f"Durée chiffrement AES: {duree} secondes")
         
         start_dec_aes = time.time()
         message_trouve = transforme_liste(dechiffrer_aes(aes_key,cipher))
@@ -75,4 +75,19 @@ if __name__=="__main__":
         print(message_trouve)
         # Durée d'exécution
         print(f"Durée déchiffrement AES: {duree} secondes")
+     
+# Images de MrRobot     
         
+from PIL import Image
+
+def image_binaire(image_path):
+    img = Image.open(image_path)
+    binaire = ""
+
+    for x in range(64):
+        pixel = img.getpixel((x,0))
+        # fait pixel modulo 2
+        pixel = str(pixel % 2)
+        binaire+=pixel
+
+    return binaire

@@ -1,14 +1,14 @@
 from SDES import *
 import time
 
-# double chiffrement d'une message clair avec 2 clés k1 et k2
+# double chiffrement SDES d'une message clair avec 2 clés k1 et k2
 def chiffrer(k1, k2, message_clair):
     res = []
     for b in message_clair:
         res.append(encrypt(k1,encrypt(k2,b)))
     return res
 
-# double déchiffrement avec 2 clés k1 et k2
+# double déchiffrement SDES avec 2 clés k1 et k2
 def dechiffrer(k1,k2,message_chiffre):
     msg = []
     for b in message_chiffre:
