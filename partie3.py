@@ -44,7 +44,7 @@ print(cle_bob_alice)
 print(" ")
 
 
-capture_file_path = "partie 2/trace_sae.cap"
+capture_file_path = "analyse_trace/trace_sae.cap"
 
 # Afficher les messages déchiffrés
 for message in (extract_messages_from_capture(capture_file_path)):
